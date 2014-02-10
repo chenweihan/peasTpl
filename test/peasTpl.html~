@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<meat charset='utf-8'>
+<script src='../src/peasTpl.js' type = 'text/javascript'></script>
+<script type='text/javascript'>
+window.onload = function() {
+         var obj = {
+                user : 'usertest',
+                name : {
+                        name1 : 'name1',
+                        name2 : 'name2',
+                        name3 : 'name3'
+                     } 
+         };
+        
+        // var tpl = document.getElementById('testfor').innerHTML;
+        // console.log(peasTpl.render(tpl,obj));
+
+        peasTpl.compileInnerHtml('testfor',obj);
+
+
+}
+</script>
+</head>
+<body>
+test
+<script type="text/html" id="testfor">
+  <div>
+  <% for (var i in name) { %>
+     <div><%=name[i]%></div>
+  <% } %>
+  <%=user%>
+  </div>  
+</script>
+</body>
+</html>
